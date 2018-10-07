@@ -11,7 +11,7 @@ Ask Tronald Dump, President of the USA, about a range of topics. Quotes courtesy
 * "Tronald tell me about Hillary?"
 
 ## Credits
-Kris Gesling (@krisgesling)
+Kris Gesling [@KrisGesling](https://twitter.com/KrisGesling)
 and thanks to [Mathias Schilling](https://twitter.com/MatChilling) for the tronalddump.io API.
 
 ## Category
