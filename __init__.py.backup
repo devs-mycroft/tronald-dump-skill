@@ -1,0 +1,24 @@
+# import urllib.request, json
+from adapt.intent import IntentBuilder
+from mycroft import MycroftSkill, intent_file_handler
+from mycroft.skills.core import MycroftSkill
+from mycroft.util.log import getLogger
+
+# __author__ = 'krisgesling'
+# LOGGER = getLogger(__name__)
+
+class TronaldDump(MycroftSkill):
+    def __init__(self):
+        MycroftSkill.__init__(self)
+
+    # with urllib.request.urlopen("https://api.tronalddump.io/search/quote?query={query}") as url:
+    # data = json.loads(url.read().decode())
+    # print(data)
+
+    @intent_file_handler('dump.tronald.intent')
+    def handle_dump_tronald(self, message):
+        self.speak_dialog('dump.tronald')
+
+
+def create_skill():
+    return TronaldDump()

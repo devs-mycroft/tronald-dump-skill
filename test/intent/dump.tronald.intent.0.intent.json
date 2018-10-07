@@ -1,0 +1,9 @@
+{
+    "expected_dialog": "no.result",
+    "expected_response": "They say Tronald doesn't know about quabsquaffle. Fake News! Ask me anything!*",
+    "intent": {
+        "topic": "quabsquaffle"
+    },
+    "intent_type": "dump.tronald.intent",
+    "utterance": "what does tronald think about quabsquaffle"
+}
