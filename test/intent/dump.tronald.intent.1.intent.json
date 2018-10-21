@@ -1,6 +1,6 @@
 {
     "expected_dialog": "dump.tronald",
-    "expected_response": "Crooked Hillary wants to take your 2nd Amendment rights away. Will guns be taken from her heavily armed Secret Service detail? Maybe not!*",
+    "expected_response": ".*Secret Service.*",
     "intent": {
         "topic": "secret service"
     },
