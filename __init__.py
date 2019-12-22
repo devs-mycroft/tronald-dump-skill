@@ -19,7 +19,7 @@ class TronaldDump(MycroftSkill):
                     i = random.randint(0, result['count'] - 1)
                     rawQuote = result['_embedded']['quotes'][i]['value']
                     speakingQuote = re.sub(r'https?:\/\/.*\s?', '', rawQuote)
-                    self.speak_dialog('dump.tronald', {'quote': speakingQuote})
+                    self.speak(speakingQuote)
         except urllib.error.HTTPError as e:
             self.speak_dialog('http.error')
         except urllib.error.URLError as e:
