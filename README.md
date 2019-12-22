@@ -1,14 +1,14 @@
-# <img src='https://rawgithub.com/FortAwesome/Font-Awesome/master/advanced-options/raw-svg/solid/meh-rolling-eyes.svg' card_color='#EDA624' width='50' height='50' style='vertical-align:bottom'/> Tronald Dump
+# <img src='https://rawcdn.githack.com/FortAwesome/Font-Awesome/ce084cb3463f15fd6b001eb70622d00a0e43c56c/svgs/solid/meh-rolling-eyes.svg' card_color='#EDA624' width='50' height='50' style='vertical-align:bottom'/> Tronald Dump
 Talk to the President of the USA.
 
 ## About
 Ask Tronald Dump, President of the USA, about a range of topics. Quotes courtesy of the tronalddump.io API.
 
 ## Examples
+* "Tronald tell me about the law?"
+* "Tronald Dump what do you think about Hillary?"
 * "What does Tronald Dump think about Obama?"
-* "What does Tronald Dump have to say about the economy?"
-* "Tronald what do you think about guns?"
-* "Tronald tell me about Hillary?"
+* "What does Tronald have to say about the economy?"
 
 ## Credits
 Kris Gesling ([@KrisGesling](https://twitter.com/KrisGesling))  
