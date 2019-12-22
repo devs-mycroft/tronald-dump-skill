@@ -1,38 +1,34 @@
-from adapt.intent import IntentBuilder
-from mycroft import MycroftSkill, intent_file_handler
-from mycroft.util.log import LOG
-import urllib, urllib.request, json, random, re
-from urllib.request import Request
+import urllib, json, random, re
+from urllib.request import Request, urlopen
 
-__author__ = 'krisgesling'
-LOGGER = LOG(__name__)
+from adapt.intent import IntentBuilder
+from mycroft import MycroftSkill, intent_handler
 
 class TronaldDump(MycroftSkill):
-    def __init__(self):
-        MycroftSkill.__init__(self)
 
-    @intent_file_handler('dump.tronald.intent')
+    @intent_handler('dump.tronald.intent')
     def handle_dump_tronald(self, message):
-        topic = message.data['topic']
-        urlParams = { 'query': topic }
-        apiUrl = "https://api.tronalddump.io/search/quote?%s" % urllib.parse.urlencode(urlParams)
+        topic = message.data.get('topic', '')
+        url_params = urllib.parse.urlencode({ 'query': topic })
+        api_url = 'https://api.tronalddump.io/search/quote?%s' % url_params
+        headers = {'User-Agent': 'Mozilla/5.0'}
         try:
-            with urllib.request.urlopen(Request(apiUrl, headers={'User-Agent': 'Mozilla/5.0'})) as url:
+            with urlopen(Request(api_url, headers=headers)) as url:
                 result = json.loads(url.read().decode())
                 if result['count'] == 0:
                     self.speak_dialog('no.result', {'topic': topic})
                 else:
                     i = random.randint(0, result['count'] - 1)
-                    rawQuote = result['_embedded']['quotes'][i]['value']
-                    speakingQuote = re.sub(r'https?:\/\/.*\s?', '', rawQuote)
-                    self.speak_dialog('dump.tronald', {'quote': speakingQuote})
+                    raw_quote = result['_embedded']['quotes'][i]['value']
+                    speakable_quote = remove_http_links(raw_quote)
+                    self.speak(speakable_quote)
         except urllib.error.HTTPError as e:
             self.speak_dialog('http.error')
         except urllib.error.URLError as e:
             self.speak_dialog('url.error')
 
-    def stop(self):
-        pass
-
 def create_skill():
     return TronaldDump()
+
+def remove_http_links(raw_quote):
+    return re.sub(r'https?:\/\/.*\s?', '', raw_quote)
