@@ -1,7 +1,8 @@
-from adapt.intent import IntentBuilder
-from mycroft import MycroftSkill, intent_handler
 import urllib, json, random, re
 from urllib.request import Request, urlopen
+
+from adapt.intent import IntentBuilder
+from mycroft import MycroftSkill, intent_handler
 
 class TronaldDump(MycroftSkill):
 
