@@ -5,7 +5,7 @@ Talk to the President of the USA.
 Ask Tronald Dump, President of the USA, about a range of topics. Quotes courtesy of the tronalddump.io API.
 
 ## Examples
-* "Tronald tell me about the law?"
+* "Tronald talk about guns?"
 * "Tronald Dump what do you think about Hillary?"
 * "What does Tronald Dump think about Obama?"
 * "What does Tronald have to say about the economy?"
