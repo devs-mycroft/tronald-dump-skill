@@ -13,7 +13,7 @@ class TronaldDump(MycroftSkill):
         api_url = 'https://api.tronalddump.io/search/quote?%s' % url_params
         headers = {'User-Agent': 'Mozilla/5.0'}
         try:
-            with urlopen(Request(api_url, headers)) as url:
+            with urlopen(Request(api_url, headers=headers)) as url:
                 result = json.loads(url.read().decode())
                 if result['count'] == 0:
                     self.speak_dialog('no.result', {'topic': topic})
@@ -29,6 +29,6 @@ class TronaldDump(MycroftSkill):
 
 def create_skill():
     return TronaldDump()
-    
+
 def remove_http_links(raw_quote):
     return re.sub(r'https?:\/\/.*\s?', '', raw_quote)
