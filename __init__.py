@@ -27,8 +27,8 @@ class TronaldDump(MycroftSkill):
         except urllib.error.URLError as e:
             self.speak_dialog('url.error')
 
-def remove_http_links(raw_quote):
-    return re.sub(r'https?:\/\/.*\s?', '', raw_quote)
-
 def create_skill():
     return TronaldDump()
+    
+def remove_http_links(raw_quote):
+    return re.sub(r'https?:\/\/.*\s?', '', raw_quote)
