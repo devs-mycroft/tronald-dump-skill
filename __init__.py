@@ -13,7 +13,7 @@ class TronaldDump(MycroftSkill):
 
     @intent_file_handler('dump.tronald.intent')
     def handle_dump_tronald(self, message):
-        topic = message.data['topic']
+        topic = message.data.get('topic', '')
         urlParams = { 'query': topic }
         apiUrl = "https://api.tronalddump.io/search/quote?%s" % urllib.parse.urlencode(urlParams)
         try:
